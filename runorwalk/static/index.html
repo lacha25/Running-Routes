@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183e35">
+  <meta name="description" content="Catch a better connection. A transit planner that makes room for a little running.">
+  <title>RunMap — Make the connection</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/vendor/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/vendor/leaflet.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="brand" aria-label="RunMap home"><img src="/icon.svg" alt="" width="35" height="35"><span>run<span class="brand-light">map</span><span class="brand-dot">.</span></span></a>
+    <span class="tagline">Make the connection.</span>
+    <nav aria-label="Main navigation"><button class="nav-active" id="plan-tab">Journey planner</button><button id="how-button">How it works <span>↗</span></button></nav>
+    <div class="header-end"><span class="version">A little faster. A little further.</span><button class="setup-button" id="setup-button"><span data-icon="settings"></span> Setup</button></div>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar" aria-label="Journey planner">
+      <div class="planner-content">
+        <div class="eyebrow"><span class="tiny-route"></span> PUBLIC TRANSPORT, AT YOUR PACE</div>
+        <h1>A little run.<br><span>An earlier arrival.</span></h1>
+        <p class="intro">Find the connections a walking route misses.</p>
+        <form id="journey-form">
+          <div class="location-fields">
+            <div class="route-dots"><i></i><span></span><i></i></div>
+            <div class="location-inputs">
+              <label class="sr-only" for="origin">Starting point</label><input id="origin" name="origin" value="ETH Zürich" placeholder="Where are you starting?" list="places" autocomplete="off" required maxlength="300">
+              <label class="sr-only" for="destination">Destination</label><input id="destination" name="destination" value="Zürich Tiefenbrunnen" placeholder="Where are you going?" list="places" autocomplete="off" required maxlength="300">
+            </div>
+            <button type="button" class="swap-button" id="swap" aria-label="Swap starting point and destination" title="Swap places"><span data-icon="swap"></span></button>
+          </div>
+          <div class="location-tools"><button type="button" id="use-location" class="location-button" disabled><span data-icon="locate"></span><span id="location-label">Use my location</span></button></div>
+          <p id="location-status" class="location-status" role="status" aria-live="polite" hidden></p>
+          <datalist id="places"></datalist>
+          <div class="departure-row">
+            <label class="departure-select"><span data-icon="clock"></span><select id="departure-mode" aria-label="Departure time"><option value="now">Leave now</option><option value="at">Choose time</option></select></label>
+            <label class="mode-select"><span class="status-dot"></span><select id="source-mode" aria-label="Route source"><option value="demo">Zürich demo</option><option value="google">Google Maps</option></select></label>
+          </div>
+          <div id="date-field" hidden><label for="departure-time">Departure · your local time</label><input type="datetime-local" id="departure-time"></div>
+          <div class="section-label"><h2>Your running profile</h2><button type="button" class="text-button" id="model-info" aria-label="About running estimates"><span data-icon="info"></span></button></div>
+          <div class="profiles" id="profiles" role="group" aria-label="Running profile">
+            <button type="button" data-profile="young_athletic" class="profile selected" aria-pressed="true"><span class="profile-symbol" data-icon="bolt"></span><span><strong>Young & athletic</strong><small>Regular runner · 18–35</small></span><i class="profile-check">✓</i></button>
+            <button type="button" data-profile="young_casual" class="profile" aria-pressed="false"><span class="profile-symbol" data-icon="leaf"></span><span><strong>Young & less active</strong><small>Occasional runner · 18–35</small></span><i class="profile-check">✓</i></button>
+            <button type="button" data-profile="forties" class="profile" aria-pressed="false"><span class="profile-symbol" data-icon="sun"></span><span><strong>In your 40s</strong><small>Moderately active · 40–49</small></span><i class="profile-check">✓</i></button>
+            <button type="button" data-profile="older" class="profile" aria-pressed="false"><span class="profile-symbol" data-icon="heart"></span><span><strong>Older adult</strong><small>Gentle running · 65+</small></span><i class="profile-check">✓</i></button>
+          </div>
+          <div class="pace-strip"><span><span data-icon="run"></span> Your estimated pace</span><strong id="pace-preview">5:46 <small>/km</small></strong><button type="button" id="tune-button" aria-expanded="false" aria-controls="tuning">Adjust <span data-icon="sliders"></span></button></div>
+          <div id="tuning" class="tuning" hidden>
+            <div class="tuning-grid"><label>VMA <span>km/h</span><input type="number" id="vma" min="5" max="30" step="0.5" value="16"></label><label>Running limit <span>min total</span><input type="number" id="max-run" min="0" max="30" step="1" value="10"></label></div>
+            <label class="range-label" for="effort">Effort <strong id="effort-value">65% of VMA</strong></label><input type="range" id="effort" min="40" max="90" step="5" value="65">
+            <label class="buffer-label" for="buffer">Time to board<select id="buffer"><option value="30">30 seconds</option><option value="60" selected>1 minute</option><option value="120">2 minutes</option><option value="180">3 minutes</option></select></label>
+            <p>VMA is maximal aerobic speed. These are starting estimates; use your measured VMA if you know it.</p>
+          </div>
+          <button type="submit" class="find-button" id="find-button"><span data-icon="route"></span><span id="find-label">Find my fastest route</span><span data-icon="arrow"></span></button>
+          <p class="demo-note" id="source-note"><span data-icon="beaker"></span> Demo journeys use an illustrative timetable.</p>
+          <div id="error" class="error" role="alert" hidden></div>
+        </form>
+        <section class="results" id="results" aria-live="polite" aria-busy="false" hidden>
+          <div class="results-heading"><h2>Your options</h2><span id="departure-label"></span></div>
+          <div id="route-options"></div>
+          <div id="journey-details"></div>
+          <p class="search-note" id="search-note"></p>
+        </section>
+      </div>
+      <footer class="sidebar-footer"><span class="footer-mark">↗</span><span>Every connection counts.</span><button id="privacy-button">Privacy & terms</button></footer>
+    </aside>
+    <section class="map-panel" aria-label="Journey map">
+      <div id="map"></div>
+      <div id="map-unavailable" class="map-unavailable" hidden><span data-icon="map"></span><h2>Connect your Google map</h2><p>Add a browser API key to see live routes here.</p><button class="setup-button" id="map-setup">View setup</button></div>
+      <div class="map-heading"><div class="map-location"><span data-icon="pin"></span><div><strong id="map-city">Zürich, Switzerland</strong><span id="map-subtitle">A smarter way across the city</span></div></div><span class="demo-badge" id="map-badge">DEMO NETWORK</span></div>
+      <div class="map-tools"><button id="fit-map" aria-label="Fit journey on map" title="Fit journey"><span data-icon="expand"></span></button><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button></div>
+      <div class="map-toast" id="map-toast" hidden></div>
+      <div class="map-summary" id="map-summary" hidden></div>
+      <div class="map-legend"><span><i class="legend-line run"></i> Run</span><span><i class="legend-line transit"></i> Transit</span><span><i class="legend-line walk"></i> Walk</span><span class="legend-hint">Click a leg to explore</span></div>
+    </section>
+  </main>
+  <dialog id="info-dialog"><div class="dialog-top"><span class="eyebrow" id="dialog-eyebrow">THE SMALL PRINT</span><button class="icon-button" id="close-dialog" aria-label="Close dialog">✕</button></div><div id="dialog-content"></div></dialog>
+</body>
+</html>

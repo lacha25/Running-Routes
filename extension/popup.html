@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RunMap</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="helpers.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="icons/icon-48.png" width="38" height="38" alt="">
+    <span class="wordmark">runmap<span class="dot">.</span></span>
+    <span class="badge">GO A LITTLE FASTER</span>
+  </header>
+  <main>
+    <h1>Make the connection.</h1>
+    <p class="intro">A little running. A better journey.</p>
+    <p id="source-status" class="source" role="status">Reading your route…</p>
+    <form id="route-form">
+      <div class="route-inputs">
+        <label for="origin"><span class="marker origin-marker"></span>Starting point</label>
+        <input id="origin" name="origin" autocomplete="off" placeholder="e.g. Zürich HB" maxlength="500" required>
+        <span class="connector" aria-hidden="true"></span>
+        <label for="destination"><span class="marker destination-marker"></span>Destination</label>
+        <input id="destination" name="destination" autocomplete="off" placeholder="e.g. ETH Zürich" maxlength="500" required>
+        <button id="swap" class="swap" type="button" title="Swap starting point and destination" aria-label="Swap starting point and destination">⇅</button>
+      </div>
+      <button id="open-planner" class="primary" type="submit">Find my faster route <span aria-hidden="true">↗</span></button>
+    </form>
+    <p class="footnote">Choose your running profile in the planner.</p>
+    <details id="settings">
+      <summary>Planner settings</summary>
+      <form id="settings-form">
+        <label for="planner-url">RunMap address</label>
+        <input id="planner-url" type="url" required spellcheck="false" aria-describedby="planner-help">
+        <p id="planner-help">Start the local RunMap server first. You can also use your own HTTPS deployment.</p>
+        <button class="secondary" type="submit">Save address</button>
+      </form>
+    </details>
+    <p id="feedback" role="status" aria-live="polite"></p>
+  </main>
+  <footer>Works alongside Google Maps. Independently built.</footer>
+</body>
+</html>
