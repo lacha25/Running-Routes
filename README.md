@@ -2,6 +2,10 @@
 
 A local transit planner that treats walking connections as opportunities to run. Compare walking and running itineraries, see route lines on an interactive map, and follow every access leg, wait, vehicle and transfer.
 
+![RunMap demo showing a Zürich journey map and an estimated 20-minute saving from running connections](docs/images/runmap-demo.jpg)
+
+*Illustrative Zürich demo with synthetic routes and timetables.*
+
 ## Start
 
 Double-click **`start.command`** in this folder. It starts the local server and opens the planner at **http://127.0.0.1:8787**. Keep its terminal window open while using RunMap; press Control-C to stop it.
