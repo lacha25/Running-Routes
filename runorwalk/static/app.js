@@ -403,6 +403,7 @@ $('#source-mode').addEventListener('change',()=>{cancelLocationRequest();updateS
 $('#setup-button').addEventListener('click',()=>openDialog('setup'));
 $('#map-setup').addEventListener('click',()=>openDialog('setup'));
 $('#how-button').addEventListener('click',()=>openDialog('how'));
+$('#footer-how-button').addEventListener('click',()=>openDialog('how'));
 $('#model-info').addEventListener('click',()=>openDialog('model'));
 $('#privacy-button').addEventListener('click',()=>openDialog('privacy'));
 $('#plan-tab').addEventListener('click',()=>{$('.sidebar').scrollTo({top:0,behavior:'smooth'});$('#origin').focus();});
