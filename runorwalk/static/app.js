@@ -232,7 +232,7 @@ async function renderMap() {
     if (step.mode === 'WAIT') return;
     const points = routePath(step);
     if (points.length < 2) return;
-    const stroke = step.mode === 'TRANSIT' ? color(step.line?.color) : step.mode === 'RUN' ? '#348a60' : '#96a88a';
+    const stroke = step.mode === 'TRANSIT' ? color(step.line?.color) : step.mode === 'RUN' ? '#c65d36' : '#8a8e9e';
     if (state.mapKind === 'leaflet') {
       const latlngs = points.map(point => [point.lat,point.lng]);
       L.polyline(latlngs, {color:'#fff',weight:9,opacity:.9,interactive:false}).addTo(state.layers);

@@ -1,42 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-labelledby="buddy-title buddy-desc">
   <title id="buddy-title">RunMap route buddy</title>
-  <desc id="buddy-desc">A cheerful lime map pin dashes to its next connection in little coral and cream running shoes.</desc>
-  <g stroke="#193F36" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round">
+  <desc id="buddy-desc">A cheerful blue map pin dashes to its next connection in little coral and cream running shoes.</desc>
+  <g stroke="#24346d" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round">
     <!-- A few loose marks keep the sprint light, rather than frantic. -->
-    <path d="M17 48l15 2M12 61l14 1M25 88l10-2" stroke="#8FAB75" stroke-width="2.8"/>
-    <path d="m123 25 3-7m7 15 7-3" stroke="#DB856C" stroke-width="2.8"/>
+    <path d="M17 48l15 2M12 61l14 1M25 88l10-2" stroke="#8b9ed8" stroke-width="2.8"/>
+    <path d="m123 25 3-7m7 15 7-3" stroke="#e99276" stroke-width="2.8"/>
 
     <!-- The far arm and leg sit behind the pin. -->
     <path d="m58 65-16 12-12-8" stroke-width="5"/>
     <path d="m31 69-4-5m3 5-6-1" stroke-width="3.4"/>
     <path d="m79 102 20 17 12-4" stroke-width="5"/>
-    <path d="m109 111 10 1 9 8c2 2 1 5-2 6l-21 3c-4 0-6-2-5-5l4-9z" fill="#FAF6E9"/>
-    <path d="m115 113 5 9 7 1" stroke="#DB856C" stroke-width="5"/>
+    <path d="m109 111 10 1 9 8c2 2 1 5-2 6l-21 3c-4 0-6-2-5-5l4-9z" fill="#faf6e9"/>
+    <path d="m115 113 5 9 7 1" stroke="#e99276" stroke-width="5"/>
     <path d="m101 126 25-3" stroke-width="2.4"/>
     <path d="m108 117 5 1m-7 3 6 1" stroke-width="2"/>
 
     <!-- The broad teardrop silhouette is still recognizably a map pin. -->
-    <path d="M76 111C65 95 47 79 49 58c2-21 18-35 39-33 22 2 35 19 32 39-3 19-22 37-37 48-3 2-5 2-7-1Z" fill="#CEEB9E"/>
-    <path d="M61 52c3-10 11-16 21-17" stroke="#F8F9E9" stroke-width="5"/>
+    <path d="M76 111C65 95 47 79 49 58c2-21 18-35 39-33 22 2 35 19 32 39-3 19-22 37-37 48-3 2-5 2-7-1Z" fill="#c8d7ff"/>
+    <path d="M61 52c3-10 11-16 21-17" stroke="#faf6e9" stroke-width="5"/>
 
     <!-- Slightly different eyes and a crooked grin give the pin its character. -->
-    <path d="M68 58c1-7 7-11 12-9 6 2 7 8 5 14-1 7-7 10-12 8-5-2-7-7-5-13Z" fill="#FAF6E9" stroke-width="2.8"/>
-    <path d="M91 57c1-6 6-10 11-8 5 2 7 7 5 13-1 6-6 10-11 8-5-1-7-7-5-13Z" fill="#FAF6E9" stroke-width="2.8"/>
-    <ellipse cx="79" cy="59" rx="3.2" ry="4.5" fill="#193F36" stroke="none" transform="rotate(12 79 59)"/>
-    <ellipse cx="102" cy="58" rx="3.1" ry="4.3" fill="#193F36" stroke="none" transform="rotate(12 102 58)"/>
+    <path d="M68 58c1-7 7-11 12-9 6 2 7 8 5 14-1 7-7 10-12 8-5-2-7-7-5-13Z" fill="#faf6e9" stroke-width="2.8"/>
+    <path d="M91 57c1-6 6-10 11-8 5 2 7 7 5 13-1 6-6 10-11 8-5-1-7-7-5-13Z" fill="#faf6e9" stroke-width="2.8"/>
+    <ellipse cx="79" cy="59" rx="3.2" ry="4.5" fill="#24346d" stroke="none" transform="rotate(12 79 59)"/>
+    <ellipse cx="102" cy="58" rx="3.1" ry="4.3" fill="#24346d" stroke="none" transform="rotate(12 102 58)"/>
     <path d="m71 43 9-1m17-2 8 2" stroke-width="2.8"/>
     <path d="M77 79c6 7 14 6 20-1" stroke-width="3"/>
     <path d="m96 76 3 3" stroke-width="2.5"/>
-    <ellipse cx="106" cy="75" rx="4.5" ry="2.5" fill="#DB856C" stroke="none" transform="rotate(-13 106 75)"/>
+    <ellipse cx="106" cy="75" rx="4.5" ry="2.5" fill="#e99276" stroke="none" transform="rotate(-13 106 75)"/>
 
     <!-- Near arm reaches forward; the trailing shoe keeps the pose airborne. -->
     <path d="m113 79 14-9-1-13" stroke-width="5"/>
     <path d="m126 58-2-6m3 6 3-4" stroke-width="3.4"/>
     <path d="m72 106-14 21-17-2" stroke-width="5"/>
-    <path d="m44 121-9-1-6 8-9 3c-3 1-3 5 0 6l22 1c4 0 6-2 6-6z" fill="#FAF6E9"/>
-    <path d="m44 123-3 8 6 1" stroke="#DB856C" stroke-width="5"/>
+    <path d="m44 121-9-1-6 8-9 3c-3 1-3 5 0 6l22 1c4 0 6-2 6-6z" fill="#faf6e9"/>
+    <path d="m44 123-3 8 6 1" stroke="#e99276" stroke-width="5"/>
     <path d="m21 134 25 1" stroke-width="2.4"/>
     <path d="m32 126 6 2m-9 2 7 2" stroke-width="2"/>
-    <path d="m71 139 9-1m8 0 4-1" stroke="#8FAB75" stroke-width="2.8"/>
+    <path d="m71 139 9-1m8 0 4-1" stroke="#8b9ed8" stroke-width="2.8"/>
   </g>
 </svg>
