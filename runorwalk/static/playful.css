@@ -106,9 +106,6 @@ h2 { font-size: 14px; font-weight: 750; }
 .map-location span { font-size: 10px; color: #5a6d95; }
 .map-location > .icon { color: #3f5fae; }
 .demo-badge { border: 1.5px solid var(--forest); background: #f4d9aa; border-radius: 5px; color: #4a4e61; box-shadow: 2px 3px 0 #24346d33; font-weight: 750; letter-spacing: .8px; transform: rotate(3deg); padding: 8px 10px; font-size: 9px; }
-.map-buddy { position: absolute; z-index: 450; top: 109px; right: 25px; width: 150px; pointer-events: none; display: flex; flex-direction: column; align-items: center; }
-.map-buddy img { width: 144px; height: 144px; filter: drop-shadow(2px 5px 0 #24346d12); }
-.buddy-note { font-family: 'Chalkboard SE', 'Comic Sans MS', cursive; font-size: 19px; font-weight: 600; line-height: 1.15; color: #34477d; transform: rotate(7deg); text-align: center; padding: 9px 17px 10px; border-radius: 52% 43% 47% 39%; background: #fff9e4ed; border: 1px dashed #9aa9ce; }
 .map-tools { right: 24px; bottom: 132px; border: 1.5px solid #7e90be; box-shadow: 3px 3px 0 #24346d26; border-radius: 10px; }
 .map-tools button { color: #3a528e; background: #fffef7; width: 38px; height: 38px; }
 .map-tools button + button { border-top-color: #c8d2eb; }
@@ -127,7 +124,6 @@ h2 { font-size: 14px; font-weight: 750; }
 .map-unavailable { background: #efeff6; }
 .map-unavailable p { color: #58678b; }
 #map-setup { font-size: 12px; }
-#map-unavailable:not([hidden]) ~ .map-buddy { display: none; }
 dialog { background: var(--paper); border: 2px solid var(--forest); border-radius: 18px 14px 22px 16px; box-shadow: 7px 8px 0 #24346d55; }
 dialog p, dialog li, dialog th { color: #56658b; }
 .icon-button { color: #3f59a0; background: #e1e8ff; }
@@ -172,9 +168,6 @@ dialog pre { background: #edf1fb; }
   .profile { padding: 12px 9px; gap: 6px; }
   .profile strong { font-size: 10px; }
   .profile small { font-size: 8px; }
-  .map-buddy { width: 110px; right: 14px; top: 112px; }
-  .map-buddy img { width: 110px; height: 110px; }
-  .buddy-note { font-size: 15px; }
   .map-summary { min-width: 0; width: max-content; max-width: calc(100% - 110px); padding: 14px; gap: 11px; }
   .summary-copy strong { font-size: 14px; }
   .summary-copy span { font-size: 10px; }
@@ -206,9 +199,6 @@ dialog pre { background: #edf1fb; }
   .map-location { padding: 9px 12px; gap: 7px; }
   .map-location strong { font-size: 11px; }
   .map-location span { font-size: 9px; }
-  .map-buddy { top: 66px; right: 8px; width: 81px; }
-  .map-buddy img { width: 81px; height: 81px; }
-  .buddy-note { display: none; }
   .map-tools { right: 14px; bottom: 118px; }
   .map-tools button { width: 30px; height: 30px; }
   .map-summary { bottom: 44px; max-width: calc(100% - 28px); width: calc(100% - 28px); padding: 11px 12px; gap: 10px; border-radius: 13px 10px 14px 11px; box-shadow: 3px 4px 0 #24346d28; }

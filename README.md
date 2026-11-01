@@ -2,7 +2,7 @@
 
 A local transit planner that treats walking connections as opportunities to run. Compare walking and running itineraries, see route lines on an interactive map, and follow every access leg, wait, vehicle and transfer.
 
-[![RunMap's playful blue-and-cream desktop planner with running profiles, route comparisons, a Zürich map and a running map-pin mascot](docs/images/runmap-demo.jpg)](docs/images/runmap-demo.jpg)
+[![RunMap's playful blue-and-cream desktop planner with running profiles, route comparisons and a Zürich map](docs/images/runmap-demo.jpg)](docs/images/runmap-demo.jpg)
 
 *Illustrative Zürich demo with synthetic routes and timetables. Click the picture to view it at full resolution (1600 × 1200).*
 
